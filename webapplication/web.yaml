@@ -41,6 +41,6 @@ spec:
       name: www
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      resoruces:
+      resources:
         requests:
            storage: 1Gi
