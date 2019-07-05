@@ -37,7 +37,7 @@ spec:
         - name: www
           mountPath: /usr/share/nginx/html
   volumeClaimTemplates:
-  - metdata:
+  - metadata:
       name: www
     spec:
       accessModes: [ "ReadWriteOnce" ]
