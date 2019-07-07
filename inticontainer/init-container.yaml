@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: pod
+metdata:
+   name: init-demo
+spec:
+  containers: 
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumneMounts:
+    - name: workDir
+      mounthPath: /usr/share/nginx/html
+  initContainers:
+  - name: install
+    image: busybox
+    command: 
+    - wget
+    - "-O"
+    - "/work-dir/index.html"
+    - http://kubernetes.io
+    volumeMounts:
+    - name: workDir
+      mountPath: "/work-dir"
+  dnsPolicy: defult
+  volumes:
+  - name: workDir
+    emptyDir: {}
