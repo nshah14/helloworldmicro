@@ -9,7 +9,7 @@ spec:
     ports:
     - containerPort: 80
     volumeMounts:
-    - name: workDir
+    - name: workdir
       mountPath: /usr/share/nginx/html
   initContainers:
   - name: install
@@ -20,9 +20,9 @@ spec:
     - "/work-dir/index.html"
     - http://kubernetes.io
     volumeMounts:
-    - name: workDir
+    - name: workdir
       mountPath: "/work-dir"
   dnsPolicy: defult
   volumes:
-  - name: workDir
+  - name: workdir
     emptyDir: {}
